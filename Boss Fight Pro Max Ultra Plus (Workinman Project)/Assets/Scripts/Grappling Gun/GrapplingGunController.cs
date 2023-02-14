@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrapplingGunController : MonoBehaviour
 {
-
+    private 
     // Update is called once per frame
     void Update()
     {
