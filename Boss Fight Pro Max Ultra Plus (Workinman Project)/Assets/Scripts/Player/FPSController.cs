@@ -59,6 +59,11 @@ public class FPSController : MonoBehaviour
             EventsManager.JetpackStart();
         }
 
+        else
+        {
+            EventsManager.JetpackOff();
+        }
+
         if (EventsManager.JetpackON)
         {
             moveDirection.y += maxjumpSpeed;

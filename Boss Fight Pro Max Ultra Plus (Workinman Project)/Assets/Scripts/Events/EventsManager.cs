@@ -13,8 +13,9 @@ public class EventsManager : MonoBehaviour
     public delegate void Resume();
     public static event Resume onResume;
 
-    public delegate void StartJetpack();
-    public static event StartJetpack onJetpackStart;
+    public delegate void Jetpack();
+    public static event Jetpack onJetpackStart;
+    public static event Jetpack onJetpackOff;
 
     public static bool isPaused;
     public static bool isMainMenu;
@@ -25,6 +26,7 @@ public class EventsManager : MonoBehaviour
     public static void ShowMainMenu() { onMainMenu?.Invoke(); }
     public static void ResumeGame() { onResume?.Invoke(); }
     public static void JetpackStart() { onJetpackStart?.Invoke(); }
+    public static void JetpackOff() { onJetpackOff?.Invoke(); }
     public static void ResetUI()
     {
         isPaused = false;

@@ -9,17 +9,25 @@ public class Jetpack : MonoBehaviour
 
     CharacterController characterController;
 
-    private float remainingFuel;
+    public static float remainingFuel;
     // Start is called before the first frame update
     private void OnEnable()
     {
-        EventsManager.onJetpackStart += Fly;
-        EventsManager.JetpackON = false;
+        EventsManager.onJetpackStart += fly;
+        EventsManager.onJetpackOff += dontFly;
     }
 
     private void OnDisable()
     {
-        EventsManager.onJetpackStart -= Fly;
+        EventsManager.onJetpackStart -= fly;
+        EventsManager.onJetpackOff -= dontFly;
+    }
+
+    private void Start()
+    {
+        remainingFuel = maxFuel;
+        EventsManager.JetpackON = false;
+        characterController = GetComponent<CharacterController>();
     }
 
     private void Update()
@@ -27,22 +35,22 @@ public class Jetpack : MonoBehaviour
         if (characterController.isGrounded && !EventsManager.JetpackON)
             regenFuel();
     }
-
-    private void Start()
-    {
-        remainingFuel = maxFuel;
-        characterController = GetComponent<CharacterController>();
-    }
-    private void Fly()
+    private void fly()
     {
         if (remainingFuel > 0)
         {
             EventsManager.JetpackON = true;
             remainingFuel -= 1;
-            Debug.Log("Remaining Fuel is:" + remainingFuel);
         }
         else
             EventsManager.JetpackON = false;
+
+        Debug.Log("Remaining Fuel is:" + remainingFuel);
+    }
+
+    private void dontFly()
+    {
+        EventsManager.JetpackON = false;
     }
 
     private void regenFuel()
