@@ -68,7 +68,7 @@ public class UIController : MonoBehaviour
     }
 
     [ContextMenu("Quit Game")]
-    private void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }

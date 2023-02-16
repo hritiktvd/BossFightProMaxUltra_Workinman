@@ -7,12 +7,14 @@ public class GameState : MonoBehaviour
     private void Start()
     {
         EventsManager.onGamePaused += PauseGame;
+        EventsManager.onMainMenu += PauseGame;
         EventsManager.onResume += ResumeGame;
     }
 
     private void OnDestroy()
     {
         EventsManager.onGamePaused -= PauseGame;
+        EventsManager.onMainMenu -= PauseGame;
         EventsManager.onResume -= ResumeGame;
     }
 
