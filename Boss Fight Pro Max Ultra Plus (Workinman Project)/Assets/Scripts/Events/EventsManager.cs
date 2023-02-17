@@ -17,16 +17,21 @@ public class EventsManager : MonoBehaviour
     public static event Jetpack onJetpackStart;
     public static event Jetpack onJetpackOff;
 
+    public delegate void GameOver();
+    public static event GameOver onGameOver;
+
     public static bool isPaused;
     public static bool isMainMenu;
     public static bool isResumed;
     public static bool JetpackON;
+    public static bool isBossDead;
 
     public static void PauseGame() { onGamePaused?.Invoke(); }
     public static void ShowMainMenu() { onMainMenu?.Invoke(); }
     public static void ResumeGame() { onResume?.Invoke(); }
     public static void JetpackStart() { onJetpackStart?.Invoke(); }
     public static void JetpackOff() { onJetpackOff?.Invoke(); }
+    public static void setGameOver() { onGameOver?.Invoke(); }
     public static void ResetUI()
     {
         isPaused = false;
