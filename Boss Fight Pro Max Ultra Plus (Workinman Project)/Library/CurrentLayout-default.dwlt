@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Inspector
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 772.8
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -120,10 +120,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 722.8
-  m_MinSize: {x: 809, y: 321}
-  m_MaxSize: {x: 22004, y: 10021}
+  m_MinSize: {x: 811, y: 342}
+  m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 454
+  controlID: 98
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,10 +145,10 @@ MonoBehaviour:
     y: 0
     width: 872.8
     height: 722.8
-  m_MinSize: {x: 302, y: 321}
-  m_MaxSize: {x: 8002, y: 8042}
+  m_MinSize: {x: 303, y: 342}
+  m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 430
+  controlID: 41
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,10 +170,10 @@ MonoBehaviour:
     y: 0
     width: 872.8
     height: 450.4
-  m_MinSize: {x: 302, y: 200}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 303, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 431
+  controlID: 42
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 0
     width: 321.6
     height: 450.4
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 15}
-  - {fileID: 16}
   - {fileID: 13}
-  m_Selected: 2
+  - {fileID: 16}
+  m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -299,8 +299,8 @@ MonoBehaviour:
     y: 0
     width: 414.40002
     height: 722.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1920, y: 1080}
+  m_TargetSize: {x: 686.49994, y: 510.5}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -346,16 +346,16 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -768
-    m_HBaseRangeMax: 768
-    m_VBaseRangeMin: -432
-    m_VBaseRangeMax: 432
+    m_HBaseRangeMin: -274.59998
+    m_HBaseRangeMax: 274.59998
+    m_VBaseRangeMin: -204.2
+    m_VBaseRangeMax: 204.2
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -375,7 +375,7 @@ MonoBehaviour:
       y: 21
       width: 549.19995
       height: 408.4
-    m_Scale: {x: 0.35755205, y: 0.35755205}
+    m_Scale: {x: 1, y: 1}
     m_Translation: {x: 274.59998, y: 204.2}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -383,12 +383,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -768
-      y: -571.10565
-      width: 1536
-      height: 1142.2113
+      x: -274.59998
+      y: -204.2
+      width: 549.19995
+      height: 408.4
     m_MinimalGUI: 1
-  m_defaultScale: 0.35755205
+  m_defaultScale: 1
   m_LastWindowPixelSize: {x: 686.49994, y: 536.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -423,23 +423,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1abbffff
-      m_LastClickedID: -17638
-      m_ExpandedIDs: 4cfbffff5e4800000e4b0000
+      m_SelectedIDs: cad3ffff
+      m_LastClickedID: -11318
+      m_ExpandedIDs: 6adbffffc0deffff6cfbffff74480000044b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Player
+        m_OriginalName: Player
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 16738
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -485,9 +485,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -36.857796, y: -0.942173, z: 7.378559}
+    m_Target: {x: 0.022504056, y: 12.859372, z: -11.010162}
     speed: 2
-    m_Value: {x: -36.857796, y: -0.942173, z: 7.378559}
+    m_Value: {x: 0.022504056, y: 12.859372, z: -11.010162}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -534,13 +534,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.16366628, y: 0.42984074, z: -0.07958228, w: -0.88445383}
+    m_Target: {x: 0.16898365, y: -0.66893876, z: 0.1600772, w: 0.70608574}
     speed: 2
-    m_Value: {x: -0.16365469, y: 0.42981032, z: -0.07957665, w: -0.8843912}
+    m_Value: {x: 0.16896538, y: -0.66886646, z: 0.1600599, w: 0.7060094}
   m_Size:
-    m_Target: 34.642284
+    m_Target: 2.1704874
     speed: 2
-    m_Value: 34.642284
+    m_Value: 2.1704874
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -689,13 +689,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Player
+    - Assets/3D Assets/RocketBox/New/Business_Male_04/Export
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Player
+  - Assets/3D Assets/RocketBox/New/Business_Male_04/Export
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Hritik Trivedi\OneDrive - purdue.edu\Desktop\Unity
     Projects\BossFightProMaxUltra_Workinman\Boss Fight Pro Max Ultra Plus (Workinman
@@ -704,9 +704,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 90500000
-    m_LastClickedID: 20624
-    m_ExpandedIDs: 000000005c5000005e50000060500000625000006450000066500000685000006a5000006c50000000ca9a3b
+    m_SelectedIDs: 96f40000
+    m_LastClickedID: 62614
+    m_ExpandedIDs: 00000000725000007450000076500000785000007a5000007c5000007e500000805000008250000094500000ac50000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -734,7 +734,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 200.20001}
     m_SelectedIDs: 38550000
     m_LastClickedID: 21816
-    m_ExpandedIDs: 000000005c5000005e50000060500000625000006450000066500000685000006a5000006c50000000ca9a3b
+    m_ExpandedIDs: 00000000725000007450000076500000785000007a5000007c5000007e5000008050000082500000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
