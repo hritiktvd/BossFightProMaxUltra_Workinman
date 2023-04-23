@@ -20,6 +20,9 @@ public class EventsManager : MonoBehaviour
     public delegate void GameOver();
     public static event GameOver onGameOver;
 
+    public delegate void TowerEnter();
+    public static event TowerEnter onTowerEnter;
+
     public static bool isPaused;
     public static bool isMainMenu;
     public static bool isResumed;
@@ -32,6 +35,7 @@ public class EventsManager : MonoBehaviour
     public static void JetpackStart() { onJetpackStart?.Invoke(); }
     public static void JetpackOff() { onJetpackOff?.Invoke(); }
     public static void setGameOver() { onGameOver?.Invoke(); }
+    public static void EnterTower() { onTowerEnter?.Invoke(); }
     public static void ResetUI()
     {
         isPaused = false;
