@@ -23,11 +23,17 @@ public class EventsManager : MonoBehaviour
     public delegate void TowerEnter();
     public static event TowerEnter onTowerEnter;
 
+    public delegate void BossCollision();
+    public static event BossCollision onBossCollision;
+
     public static bool isPaused;
     public static bool isMainMenu;
     public static bool isResumed;
     public static bool JetpackON;
     public static bool isBossDead;
+    public static bool TowerReached;
+    public static int TowerID;
+    public static bool isBossColliding;
 
     public static void PauseGame() { onGamePaused?.Invoke(); }
     public static void ShowMainMenu() { onMainMenu?.Invoke(); }
@@ -36,6 +42,10 @@ public class EventsManager : MonoBehaviour
     public static void JetpackOff() { onJetpackOff?.Invoke(); }
     public static void setGameOver() { onGameOver?.Invoke(); }
     public static void EnterTower() { onTowerEnter?.Invoke(); }
+    public static void CollideBoss() { 
+        onBossCollision?.Invoke();
+        isBossColliding = true;
+    }
     public static void ResetUI()
     {
         isPaused = false;

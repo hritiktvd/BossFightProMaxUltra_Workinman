@@ -8,8 +8,15 @@ public class UIController : MonoBehaviour
     public List<GameObject> UIPanels;
 
     [SerializeField]
-    private Button PauseQuitButton; 
-
+    private Button PauseQuitButton;
+    private void OnEnable()
+    {
+        EventsManager.onGameOver += () => invokeMenuUI(0);
+    }
+    private void OnDisable()
+    {
+        EventsManager.onGameOver -= () => invokeMenuUI(0);
+    }
     void Start()
     {
         EventsManager.ResetUI();

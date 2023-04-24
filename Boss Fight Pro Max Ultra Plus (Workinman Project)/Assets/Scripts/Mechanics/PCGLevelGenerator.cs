@@ -91,7 +91,7 @@ public class PCGLevelGenerator : MonoBehaviour
         platform = Instantiate(PCGCube);
         platform.SetActive(true);
         platform.transform.localScale = new Vector3(scaleX, PCGCube.transform.localScale.y, scaleZ);
-        platform.transform.position = new Vector3(Towers[CollisionDetection.TowerID].transform.position.x, heightY, Towers[CollisionDetection.TowerID].transform.position.z*spawnID*0.4f);
+        platform.transform.position = new Vector3(Towers[EventsManager.TowerID].transform.position.x, heightY, Towers[EventsManager.TowerID].transform.position.z*spawnID*0.4f);
         platform.transform.localRotation = Quaternion.Euler(0, 90, 0);
     }
 
