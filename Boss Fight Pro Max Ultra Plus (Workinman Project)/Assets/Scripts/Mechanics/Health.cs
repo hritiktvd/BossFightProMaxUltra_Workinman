@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private int playerHealth;
 
     private void OnEnable()
     {
         EventsManager.onBossCollision += DamagePlayer;
+        EventsManager.onGameStart += StartGame;
     }
 
     private void OnDisable()
     {
         EventsManager.onBossCollision -= DamagePlayer;
+        EventsManager.onGameStart -= StartGame;
     }
     // Start is called before the first frame update
-    void Start()
+    private void StartGame()
     {
-        playerHealth = 100;
+        EventsManager.playerHealth = 100;
         EventsManager.isBossDead = false;
     }
 
@@ -41,9 +42,9 @@ public class Health : MonoBehaviour
 
     private void DamagePlayer()
     {
-        playerHealth -= 1;
-        Debug.Log("Remaining:" + playerHealth);
-        if (playerHealth == 0)
+        EventsManager.playerHealth -= 0.5f;
+        Debug.Log("Remaining:" + EventsManager.playerHealth);
+        if (EventsManager.playerHealth == 0)
         {
             EventsManager.setGameOver();
         }

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 910, y: 321}
   m_MaxSize: {x: 22005, y: 10021}
   vertical: 0
-  controlID: 174
+  controlID: 121
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 321}
   m_MaxSize: {x: 8003, y: 8021}
   vertical: 1
-  controlID: 86
+  controlID: 61
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -423,23 +423,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6cfbffff
+      m_SelectedIDs: a84a0000
+      m_LastClickedID: 19112
+      m_ExpandedIDs: 6cfbffff744100007e430000d4480000a0490000a04b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Magic_tower 3
+        m_OriginalName: Magic_tower 3
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 18672
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -485,9 +485,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -8.250719, y: 16.815672, z: 25.346437}
+    m_Target: {x: -12.642131, y: 14.007083, z: 40.10692}
     speed: 2
-    m_Value: {x: -8.250719, y: 16.815672, z: 25.346437}
+    m_Value: {x: -12.642131, y: 14.007083, z: 40.10692}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -534,13 +534,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.00000050963894, y: -0.48844662, z: 0.00000066894205, w: -0.8725989}
+    m_Target: {x: 0.24556173, y: 0.004653706, z: -0.001180847, w: 0.9693768}
     speed: 2
-    m_Value: {x: 0.00000050963666, y: -0.48844448, z: 0.0000006689391, w: -0.872595}
+    m_Value: {x: 0.24555989, y: 0.0046536713, z: -0.0011808381, w: 0.96936953}
   m_Size:
-    m_Target: 12.203563
+    m_Target: 9.368162
     speed: 2
-    m_Value: 12.203563
+    m_Value: 9.368162
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -689,13 +689,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Mechanics
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Mechanics
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Hritik Trivedi\OneDrive - purdue.edu\Desktop\Unity
     Projects\BossFightProMaxUltra_Workinman\Boss Fight Pro Max Ultra Plus (Workinman
@@ -704,8 +704,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 50520000
-    m_LastClickedID: 21072
+    m_SelectedIDs: 18520000
+    m_LastClickedID: 21016
     m_ExpandedIDs: 00000000185200001a5200001c5200001e520000205200002252000024520000265200002852000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -822,7 +822,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 988.80005
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0

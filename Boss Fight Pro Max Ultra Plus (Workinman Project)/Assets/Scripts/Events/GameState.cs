@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    private void Start()
+    public static int DifficultyID;
+
+
+    private void OnEnable()
     {
         EventsManager.onGamePaused += PauseGame;
         EventsManager.onMainMenu += PauseGame;
         EventsManager.onResume += ResumeGame;
     }
-
-    private void OnDestroy()
+    private void OnDisable()
     {
         EventsManager.onGamePaused -= PauseGame;
         EventsManager.onMainMenu -= PauseGame;
         EventsManager.onResume -= ResumeGame;
     }
+
 
     private void PauseGame()
     {
@@ -26,6 +29,15 @@ public class GameState : MonoBehaviour
     private void ResumeGame()
     {
         Time.timeScale = 1;
+    }
+
+    public static void switchDifficulty()
+    {
+        if (DifficultyID < 5) // 5 levels of difficulty. Same as difficultyVariables.count but this is a static function
+        {
+            DifficultyID++;
+            EventsManager.ChangeDifficulty();
+        }
     }
 
 

@@ -10,6 +10,11 @@ TagManager:
   - Tower4
   - Tower5
   - BadGuy
+  - Endpoint1
+  - Endpoint2
+  - Endpoint3
+  - Endpoint4
+  - Endpoint5
   layers:
   - Default
   - TransparentFX

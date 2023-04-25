@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [System.Serializable]
 public class DifficultyVariables
@@ -16,15 +17,14 @@ public class DifficultyVariables
     public float MinPlatformGap;
     public int MaxPlatformGap;
     public float BossSpeed;
-    public int JetpackFuel;
-}
+    //public int JetpackFuel;
+} 
 
 public class PCGLevelGenerator : MonoBehaviour
 {
     private enum Difficulty { Baby, Easy, Medium, Hard, Titan}
     Difficulty difficulty;
 
-    private static int DifficultyID;
 
     [SerializeField]
     private GameObject PCGCube;
@@ -33,6 +33,7 @@ public class PCGLevelGenerator : MonoBehaviour
     private List<GameObject> Towers;
 
     private GameObject platform;
+    public NavMeshAgent BadGuy;
 
     [SerializeField]
     public List<DifficultyVariables> DifficultyVariables;
@@ -42,18 +43,23 @@ public class PCGLevelGenerator : MonoBehaviour
     private void OnEnable()
     {
         EventsManager.onTowerEnter += InitLevel;
+        EventsManager.onGameStart += StartGame;
+        EventsManager.onDifficultyChange += changeBossSpeed;
     }
 
     private void OnDisable()
     {
         EventsManager.onTowerEnter -= InitLevel;
+        EventsManager.onGameStart -= StartGame;
+        EventsManager.onDifficultyChange -= changeBossSpeed;
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void StartGame()
     {
         //difficulty = Difficulty.Baby;
-        DifficultyID = 0;
+        GameState.DifficultyID = 0;
+        BadGuy.speed = DifficultyVariables[GameState.DifficultyID].BossSpeed;
         spawnPlatform = false;
     }
 
@@ -78,10 +84,10 @@ public class PCGLevelGenerator : MonoBehaviour
 
     private void generateBlockValues(int spawnID)
     {
-        float CubeScaleX = Random.Range(DifficultyVariables[DifficultyID].MinXScale, DifficultyVariables[DifficultyID].MaxXScale);
-        float CubeScaleZ = Random.Range(DifficultyVariables[DifficultyID].MinZcale, DifficultyVariables[DifficultyID].MaxZScale);
-        float CubeHeightY = Random.Range(DifficultyVariables[DifficultyID].MinYHeight, DifficultyVariables[DifficultyID].MaxYHeight);
-        float PlatformGap = Random.Range(DifficultyVariables[DifficultyID].MinPlatformGap, DifficultyVariables[DifficultyID].MaxPlatformGap);
+        float CubeScaleX = Random.Range(DifficultyVariables[GameState.DifficultyID].MinXScale, DifficultyVariables[GameState.DifficultyID].MaxXScale);
+        float CubeScaleZ = Random.Range(DifficultyVariables[GameState.DifficultyID].MinZcale, DifficultyVariables[GameState.DifficultyID].MaxZScale);
+        float CubeHeightY = Random.Range(DifficultyVariables[GameState.DifficultyID].MinYHeight, DifficultyVariables[GameState.DifficultyID].MaxYHeight);
+        float PlatformGap = Random.Range(DifficultyVariables[GameState.DifficultyID].MinPlatformGap, DifficultyVariables[GameState.DifficultyID].MaxPlatformGap);
         
         GenerateBlock(CubeScaleX, CubeScaleZ, CubeHeightY, PlatformGap, spawnID);
     }
@@ -98,7 +104,7 @@ public class PCGLevelGenerator : MonoBehaviour
     private void GenerateLevel()
     {
         PCGCube.SetActive(false);
-        for(int i=0; i< DifficultyVariables[DifficultyID].PlatformCount; ++i)
+        for(int i=0; i< DifficultyVariables[GameState.DifficultyID].PlatformCount; ++i)
         {
             generateBlockValues(i);
         }
@@ -110,10 +116,11 @@ public class PCGLevelGenerator : MonoBehaviour
         Debug.Log(DifficultyVariables[0]);
     }
 
-    public static void switchDifficulty() { 
-        if(DifficultyID < 5) // 5 levels of difficulty. Same as difficultyVariables.count but this is a static function
-        {
-            DifficultyID++;
-        }
+    private void changeBossSpeed()
+    {
+        BadGuy.speed = DifficultyVariables[GameState.DifficultyID].BossSpeed;
+        Debug.Log("Boss Speed Changed to" + BadGuy.speed);
+        if(GameState.DifficultyID == DifficultyVariables.Count-1) { Debug.Log("Max Boss Speed Reached"); }
     }
+
 }
