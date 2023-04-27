@@ -36,6 +36,7 @@ public class GameState : MonoBehaviour
         if (DifficultyID < 5) // 5 levels of difficulty. Same as difficultyVariables.count but this is a static function
         {
             DifficultyID++;
+            Debug.Log("Difficulty is: " + DifficultyID);
             EventsManager.ChangeDifficulty();
         }
     }

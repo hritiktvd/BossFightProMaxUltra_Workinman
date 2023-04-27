@@ -15,7 +15,7 @@ public class DifficultyVariables
     public float MinYHeight;
     public float MaxYHeight;
     public float MinPlatformGap;
-    public int MaxPlatformGap;
+    public float MaxPlatformGap;
     public float BossSpeed;
     //public int JetpackFuel;
 } 
@@ -73,13 +73,15 @@ public class PCGLevelGenerator : MonoBehaviour
             {
                 GenerateLevel();
                 spawnPlatform = true;
+                StartCoroutine(CooldownPeriod());
             }
         }
-        if (Input.GetKey(KeyCode.X))
-        {
-            //switchDifficulty();
-            spawnPlatform = false;
-        }
+    }
+
+    private IEnumerator CooldownPeriod()
+    {
+        yield return new WaitForSeconds(0.5f);
+        spawnPlatform = false; 
     }
 
     private void generateBlockValues(int spawnID)
@@ -88,6 +90,8 @@ public class PCGLevelGenerator : MonoBehaviour
         float CubeScaleZ = Random.Range(DifficultyVariables[GameState.DifficultyID].MinZcale, DifficultyVariables[GameState.DifficultyID].MaxZScale);
         float CubeHeightY = Random.Range(DifficultyVariables[GameState.DifficultyID].MinYHeight, DifficultyVariables[GameState.DifficultyID].MaxYHeight);
         float PlatformGap = Random.Range(DifficultyVariables[GameState.DifficultyID].MinPlatformGap, DifficultyVariables[GameState.DifficultyID].MaxPlatformGap);
+
+        Debug.Log(DifficultyVariables[GameState.DifficultyID].PlatformCount+" " +CubeScaleX + " " + CubeScaleZ + " " + CubeHeightY + " " + PlatformGap);
         
         GenerateBlock(CubeScaleX, CubeScaleZ, CubeHeightY, PlatformGap, spawnID);
     }
@@ -97,7 +101,7 @@ public class PCGLevelGenerator : MonoBehaviour
         platform = Instantiate(PCGCube);
         platform.SetActive(true);
         platform.transform.localScale = new Vector3(scaleX, PCGCube.transform.localScale.y, scaleZ);
-        platform.transform.position = new Vector3(Towers[EventsManager.TowerID].transform.position.x, heightY, Towers[EventsManager.TowerID].transform.position.z*spawnID*0.4f);
+        platform.transform.position = new Vector3(Towers[EventsManager.TowerID].transform.position.x, heightY, Towers[EventsManager.TowerID].transform.position.z*platformGap);
         platform.transform.localRotation = Quaternion.Euler(0, 90, 0);
     }
 

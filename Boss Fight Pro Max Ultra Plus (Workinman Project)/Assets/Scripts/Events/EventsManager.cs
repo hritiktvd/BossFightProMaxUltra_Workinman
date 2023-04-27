@@ -53,7 +53,7 @@ public class EventsManager : MonoBehaviour
     public static void setGameOver() { onGameOver?.Invoke(); }
     public static void EnterTower() { onTowerEnter?.Invoke(); }
 
-    public static void CollideBoss() { 
+    public static void CollideBoss() {  
         onBossCollision?.Invoke();
         isBossColliding = true;
     }

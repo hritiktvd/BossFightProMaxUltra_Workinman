@@ -2,26 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
     public List<GameObject> UIPanels;
+    public TextMeshProUGUI HealthText;
 
     [SerializeField]
     private Button PauseQuitButton;
+    [SerializeField]
+    private Button ResumeButton;
+
     private void OnEnable()
     {
         EventsManager.onGameOver += () => invokeMenuUI(0);
+        EventsManager.onGameStart += () => invokeMenuUI(2);
     }
     private void OnDisable()
     {
         EventsManager.onGameOver -= () => invokeMenuUI(0);
+        EventsManager.onGameStart -= () => invokeMenuUI(2);
     }
     void Start()
     {
         EventsManager.ResetUI();
         invokeMenuUI(0);
         PauseQuitButton.onClick.AddListener(delegate{ invokeMenuUI(0); });
+        ResumeButton.onClick.AddListener(delegate{ Resume(); });
     }
 
     void Update()
@@ -30,6 +38,7 @@ public class UIController : MonoBehaviour
         {
             invokeMenuUI(1);
         }
+        HealthText.text = "HEALTH " + EventsManager.playerHealth;
     }
 
     private void invokeMenuUI(int ListID)
@@ -70,6 +79,7 @@ public class UIController : MonoBehaviour
     {
         hideAllMenus();
         EventsManager.ResumeGame();
+        invokeMenuUI(2);
         EventsManager.ResetUI();
         Cursor.visible = false;
     }

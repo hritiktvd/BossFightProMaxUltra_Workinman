@@ -129,7 +129,7 @@ public class CollisionDetection : MonoBehaviour
     {
         endpointsCompleted += endpointID;
         Debug.Log("Total Completed:" + endpointsCompleted);
-        if(endpointsCompleted == endpointsTotal) { Debug.Log("Game Over"); }
+        if(endpointsCompleted == endpointsTotal) { EventsManager.setGameOver(); }
     }
 
 }

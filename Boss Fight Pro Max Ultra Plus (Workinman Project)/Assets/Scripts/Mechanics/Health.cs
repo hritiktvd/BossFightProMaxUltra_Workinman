@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-
     private void OnEnable()
     {
         EventsManager.onBossCollision += DamagePlayer;
@@ -19,9 +18,10 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     private void StartGame()
     {
-        EventsManager.playerHealth = 100;
+        EventsManager.playerHealth = 200;
         EventsManager.isBossDead = false;
     }
+
 
     // Update is called once per frame
     //void Update()
