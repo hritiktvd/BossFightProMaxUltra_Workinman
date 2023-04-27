@@ -44,9 +44,10 @@ public class Health : MonoBehaviour
     {
         EventsManager.playerHealth -= 0.5f;
         Debug.Log("Remaining:" + EventsManager.playerHealth);
-        if (EventsManager.playerHealth == 0)
+        if (EventsManager.playerHealth <= 0)
         {
             EventsManager.setGameOver();
         }
+
     }
 }

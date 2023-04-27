@@ -23,6 +23,9 @@ public class EventsManager : MonoBehaviour
     public delegate void GameOver();
     public static event GameOver onGameOver;
 
+    public delegate void GameWin();
+    public static event GameWin onGameWin;
+
     public delegate void TowerEnter();
     public static event TowerEnter onTowerEnter;
 
@@ -42,6 +45,7 @@ public class EventsManager : MonoBehaviour
     public static bool isBossColliding;
     public static float maxFuel;
     public static float playerHealth;
+    public static float maxHealthPerLevel;
 
     public static void ChangeDifficulty() { onDifficultyChange?.Invoke(); }
     public static void GameStart() { onGameStart?.Invoke(); } 
@@ -52,7 +56,7 @@ public class EventsManager : MonoBehaviour
     public static void JetpackOff() { onJetpackOff?.Invoke(); }
     public static void setGameOver() { onGameOver?.Invoke(); }
     public static void EnterTower() { onTowerEnter?.Invoke(); }
-
+    public static void WinGame() { onGameWin?.Invoke(); }
     public static void CollideBoss() {  
         onBossCollision?.Invoke();
         isBossColliding = true;

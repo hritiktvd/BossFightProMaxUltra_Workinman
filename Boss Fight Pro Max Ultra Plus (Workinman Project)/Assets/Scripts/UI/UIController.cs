@@ -16,13 +16,15 @@ public class UIController : MonoBehaviour
 
     private void OnEnable()
     {
-        EventsManager.onGameOver += () => invokeMenuUI(0);
+        EventsManager.onGameOver += QuitGame;
         EventsManager.onGameStart += () => invokeMenuUI(2);
+        EventsManager.onGameWin += () => invokeMenuUI(3);
     }
     private void OnDisable()
     {
-        EventsManager.onGameOver -= () => invokeMenuUI(0);
+        EventsManager.onGameOver -= QuitGame;
         EventsManager.onGameStart -= () => invokeMenuUI(2);
+        EventsManager.onGameWin -= () => invokeMenuUI(3);
     }
     void Start()
     {
@@ -60,6 +62,7 @@ public class UIController : MonoBehaviour
             EventsManager.isPaused = true;
         }
 
+
         UIPanels[ListID].SetActive(true);
 
     }
@@ -87,7 +90,7 @@ public class UIController : MonoBehaviour
     [ContextMenu("Quit Game")]
     public void QuitGame()
     {
-        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     public List<bool> Endpoints;
-    private int endpointsTotal, endpointsCompleted;
+    private int endpointsTotal, endpointsCompleted,endpointsCalled;
 
     private void OnEnable()
     {
@@ -29,6 +29,8 @@ public class CollisionDetection : MonoBehaviour
         {
             endpointsTotal += i;
         }
+        endpointsCalled = 0;
+        EventsManager.maxHealthPerLevel = 200;
     }
 
     private void OnTriggerStay(Collider other)
@@ -80,6 +82,14 @@ public class CollisionDetection : MonoBehaviour
             EventsManager.isBossColliding = false;
         }
 
+        if(other.gameObject.tag == "HealthRegen")
+        {
+            if(EventsManager.playerHealth < EventsManager.maxHealthPerLevel)
+            {
+                EventsManager.playerHealth = EventsManager.maxHealthPerLevel;
+            }
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -127,9 +137,13 @@ public class CollisionDetection : MonoBehaviour
 
     private void CheckEndPoints(int endpointID)
     {
+        endpointsCalled++;
         endpointsCompleted += endpointID;
+        if(endpointsCalled < 5) { 
+            EventsManager.maxHealthPerLevel -= endpointsCalled * 15;
+        }
         Debug.Log("Total Completed:" + endpointsCompleted);
-        if(endpointsCompleted == endpointsTotal) { EventsManager.setGameOver(); }
+        if(endpointsCompleted == endpointsTotal) { EventsManager.WinGame(); }
     }
 
 }

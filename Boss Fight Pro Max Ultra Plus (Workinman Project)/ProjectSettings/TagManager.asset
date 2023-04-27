@@ -15,6 +15,7 @@ TagManager:
   - Endpoint3
   - Endpoint4
   - Endpoint5
+  - HealthRegen
   layers:
   - Default
   - TransparentFX

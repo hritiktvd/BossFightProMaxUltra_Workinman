@@ -12,12 +12,14 @@ public class GameState : MonoBehaviour
         EventsManager.onGamePaused += PauseGame;
         EventsManager.onMainMenu += PauseGame;
         EventsManager.onResume += ResumeGame;
+        EventsManager.onGameOver += PauseGame;
     }
     private void OnDisable()
     {
         EventsManager.onGamePaused -= PauseGame;
         EventsManager.onMainMenu -= PauseGame;
         EventsManager.onResume -= ResumeGame;
+        EventsManager.onGameOver -= PauseGame;
     }
 
 
