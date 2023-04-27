@@ -39,6 +39,10 @@ public class GameState : MonoBehaviour
             Debug.Log("Difficulty is: " + DifficultyID);
             EventsManager.ChangeDifficulty();
         }
+        else
+        {
+            Debug.Log("Max Difficulty Reached");
+        }
     }
 
 

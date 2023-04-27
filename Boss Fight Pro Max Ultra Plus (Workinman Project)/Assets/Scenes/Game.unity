@@ -10701,7 +10701,7 @@ MonoBehaviour:
     MaxYHeight: 10
     MinPlatformGap: 0.76
     MaxPlatformGap: 0.96
-    BossSpeed: 12
+    BossSpeed: 11
   - Difficulty: Medium
     PlatformCount: 3
     MinXScale: 2
@@ -10712,7 +10712,7 @@ MonoBehaviour:
     MaxYHeight: 9
     MinPlatformGap: 0.8
     MaxPlatformGap: 0.95
-    BossSpeed: 15
+    BossSpeed: 13
   - Difficulty: Hard
     PlatformCount: 2
     MinXScale: 1
@@ -10723,7 +10723,7 @@ MonoBehaviour:
     MaxYHeight: 8
     MinPlatformGap: 0.7
     MaxPlatformGap: 0.96
-    BossSpeed: 18
+    BossSpeed: 15
   - Difficulty: Titan
     PlatformCount: 1
     MinXScale: 1
@@ -10732,9 +10732,9 @@ MonoBehaviour:
     MaxZScale: 1.5
     MinYHeight: -1.5
     MaxYHeight: 8
-    MinPlatformGap: 0.7
-    MaxPlatformGap: 0.9
-    BossSpeed: 21
+    MinPlatformGap: 0.9
+    MaxPlatformGap: 1
+    BossSpeed: 17
 --- !u!1001 &360860612
 PrefabInstance:
   m_ObjectHideFlags: 0

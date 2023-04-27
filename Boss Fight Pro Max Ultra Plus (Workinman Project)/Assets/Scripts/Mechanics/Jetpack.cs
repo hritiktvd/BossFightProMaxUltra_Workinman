@@ -26,7 +26,7 @@ public class Jetpack : MonoBehaviour
 
     private void StartGame()
     {
-        remainingFuel = EventsManager.maxFuel = 450;
+        remainingFuel = EventsManager.maxFuel = 150;
     }
 
     private void Start()
